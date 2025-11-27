@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_FN2] = LAYOUT_ansi_66(
         KC_TILD, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, QK_BOOT, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
+        _______, AC_TOGG, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
         _______, _______, _______, KC_CAPS, _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLU, _______,
         _______, _______, _______, _______, _______,          _______,          _______, _______, KC_MUTE, KC_VOLD, KC_MPLY
     ),
@@ -119,4 +119,9 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 // Process custom keycodes
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return process_record_d3lilah(keycode, record);
+}
+
+// Initialize autocorrect to be ON by default
+void keyboard_post_init_user(void) {
+    autocorrect_enable();
 }

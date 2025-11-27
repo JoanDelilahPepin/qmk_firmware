@@ -1,5 +1,6 @@
 VIA_ENABLE = yes
 ENCODER_MAP_ENABLE = yes
+AUTOCORRECT_ENABLE = yes    # Enable autocorrect with 400 word dictionary
 
 # Include user directory for custom macros
 USER_NAME := d3lilah_qmk
